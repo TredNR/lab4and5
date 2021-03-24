@@ -1,10 +1,16 @@
 from flask import Flask
-from flask_cors import CORS, cross_origin
-test = Flask(__name__)
-cors = CORS(test)
-test.config['CORS_HEADERS'] = 'Content-Type'
 
-@test.route("/")
-@cross_origin()
-def helloWorld():
-  return "Hello, cross-origin-world!"
+test = Flask(__name__)
+
+@test.route('/')
+def hello():
+    return "Привет, мир!"
+
+
+@test.route('/<name>')
+def hello_name(name):
+    return f"Привет, {name}!"
+
+
+if __name__ == '__main__':
+    test.run()
