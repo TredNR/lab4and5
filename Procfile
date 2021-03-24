@@ -1,1 +1,1 @@
-web: gunicorn runp-heroku:test
+web: gunicorn test:app
