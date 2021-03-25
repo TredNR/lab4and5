@@ -115,6 +115,10 @@ def not_found(error=None):
     respone = jsonify(message)
     respone.status_code = 404
     return respone
+
+@app.route('/')
+def index():
+    return "Hello, World!"
 		
 if __name__ == "__main__":
     app.run()
